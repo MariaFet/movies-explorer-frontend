@@ -1,0 +1,117 @@
+.portfolio {
+  width: 100%;
+  padding-right: 70px;
+  padding-left: 70px;
+  padding-bottom: 125px;
+  box-sizing: border-box;
+  background: #FFF;
+}
+
+.portfolio__title {
+  margin: 0;
+  color: #A0A0A0;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 111.111% */
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.portfolio__item {
+  border-bottom: 1px solid #E8E8E8;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 19px;
+  box-sizing: border-box;
+}
+
+.portfolio__item:last-of-type {
+  border: none;
+  margin-top: 0;
+}
+
+.portfolio__link {
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px; /* 166.667% */
+  letter-spacing: -1.2px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.portfolio__link:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.portfolio__link-arrow {
+  margin: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px; /* 200% */
+  letter-spacing: -1.2px;
+  margin-bottom: 9px;
+}
+
+.portfolio__container {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 970px) {
+  .portfolio {
+    padding: 0 50px 90px;
+  }
+  
+  .portfolio__link {
+    letter-spacing: -1.12px;
+    font-size: 28px;
+    line-height: 50px;
+    height: 50px;
+    text-align: left;
+  }
+
+  .portfolio__link-arrow {
+    letter-spacing: -1.12px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 320px) {
+  .portfolio {
+    padding: 0 14px 70px;
+  }
+
+  .portfolio__title {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .portfolio__link {
+    line-height: 28px;
+    letter-spacing: -0.72px;
+    font-size: 18px;
+    height: auto;
+  }
+
+  .portfolio__link-arrow {
+    letter-spacing: -0.72px;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+}

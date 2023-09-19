@@ -1,0 +1,178 @@
+.student {
+  width: 100%;
+  padding: 110px 70px 101px;
+  box-sizing: border-box;
+  background: #FFF;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.student__container {
+  border-bottom: solid black 1px;
+  width: 100%;
+  margin-bottom: 66px;
+}
+
+.student__title {
+  margin: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  margin-bottom: 23px;
+  text-align: left;
+}
+
+.student__box {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.student__name {
+  margin: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 58px; /* 116% */
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.student__job {
+  margin: 0;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 111.111% */
+  margin-bottom: 26px;
+}
+
+.student__info {
+  margin: 0;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  margin-bottom: 99px;
+}
+
+.student__link {
+  margin: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  color: black;
+  margin-top: auto;
+}
+
+.student__link:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.student__picture {
+  border-radius: 10px;
+  background: lightgray 50% cover no-repeat;
+  max-width: 270px;
+  min-height: 327px;
+}
+
+.student__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 970px) {
+  .student {
+    padding: 90px 50px;
+  }
+
+  .student__container {
+    margin-bottom: 66px;
+  }
+
+  .student__picture {
+    max-width: 255px;
+    min-height: 307px;
+  }
+
+  .student__name {
+    line-height: 40px;
+    letter-spacing: -1.6px;
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .student__job {
+    margin-bottom: 20px;
+    line-height: 18px;
+    font-size: 12px;
+  }
+
+  .student__info {
+    margin-bottom: 87px;
+    line-height: 18px;
+    font-size: 12px;
+  }
+  
+  .student__wrapper {
+    gap: 49px;
+  }
+}
+
+@media (max-width: 570px) {
+  .student {
+    padding: 70px 14px;
+  }
+
+  .student__container {
+    margin-bottom: 60px;
+  }
+
+  .student__picture {
+    max-width: 292px;
+    min-height: 352px;
+    margin-bottom: 40px;
+  }
+
+  .student__title {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+
+  .student__wrapper {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 0;
+  }
+
+  .student__name {
+    margin-bottom: 20px;
+    line-height: normal;
+    font-size: 30px;
+    letter-spacing: -1.2px;
+  }
+
+  .student__job {
+    line-height: 16px;
+    font-size: 11px;
+  }
+
+  .student__info {
+    line-height: 16px;
+    font-size: 11px;
+    margin-bottom: 40px;
+  }
+}

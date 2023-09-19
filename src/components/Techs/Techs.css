@@ -1,0 +1,146 @@
+.technologies {
+  width: 100%;
+  padding: 100px 70px;
+  box-sizing: border-box;
+  background: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.technologies__container {
+  border-bottom: solid black 1px;
+  width: 100%;
+  margin-bottom: 90px;
+}
+
+.technologies__title {
+  margin: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;   
+  margin-bottom: 23px;
+  text-align: left;
+}
+
+.technologies__header {
+  margin: 0;
+  text-align: center;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 58px; /* 116% */
+  letter-spacing: -2px;
+  margin-bottom: 26px;
+}
+
+.technologies__text {
+  margin: 0;
+  text-align: center;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.56px;
+}
+
+.technologies__paragraph {
+  margin: 0;
+  margin-bottom: 100px;
+  text-align: center;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.56px;
+  max-width: 460px;
+}
+
+.technologies__list {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.technologies__item {
+  border-radius: 10px;
+  background: #E8E8E8;
+  width: 90px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 570px) {
+  .technologies {
+    padding: 70px 18px;
+  }
+
+  .technologies__container {
+    margin-bottom: 60px;
+  }
+
+  .technologies__title {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+
+  .technologies__header {
+    line-height: normal;
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .technologies__paragraph {
+    line-height: 16px;
+    font-size: 11px;
+    margin-bottom: 50px;
+  }
+
+  .technologies__text {
+    line-height: normal;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 970px) {
+  .technologies {
+    padding: 90px 50px;
+  }
+
+  .technologies__container {
+    margin-bottom: 80px;
+  }
+
+  .technologies__header {
+    margin-bottom: 22px;
+  }
+
+  .technologies__paragraph {
+    line-height: 18px;
+    font-size: 12px;
+    margin-bottom: 83px;
+    letter-spacing: -0.48px;
+  }
+
+  .technologies__text {
+    line-height: normal;
+    font-size: 12px;
+    letter-spacing: -0.48px;
+  }
+
+  .technologies__item {
+    width: 84px;
+    height: 57px;
+  }
+}

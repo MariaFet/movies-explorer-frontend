@@ -1,0 +1,44 @@
+.burger-menu__button {
+  display: none;
+}
+
+.burger-menu__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+@media (max-width: 970px) {
+  .burger-menu__button {
+    display: block;
+    border: none;
+    padding: 0;
+    background: transparent;
+    width: 44px;
+    height: 44px;
+  }
+
+  .burger-menu__button-image {
+    display: block;
+    width: 44px;
+    height: 44px;
+
+  }
+}
+
+@media (max-width: 590px) {
+  .burger-menu__button {
+    display: block;
+    border: none;
+    padding: 0;
+    background: transparent;
+    width: 40px;
+    height: 43px;
+  }
+
+  .burger-menu__button-image {
+    display: block;
+    width: 40px;
+    height: 43px;
+
+  }
+}

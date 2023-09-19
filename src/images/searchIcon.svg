@@ -1,0 +1,21 @@
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="22" height="22" fill="#E5E5E5"/>
+<g id="RESULT_MAIN" clip-path="url(#clip0_1_298)">
+<rect width="1280" height="1727" transform="translate(-1153 -146)" fill="white"/>
+<g id="search__ID:9">
+<rect id="back__COLOR:primary" x="-1153" y="-72" width="1280" height="247" fill="white"/>
+<rect id="search-input__COLOR:special-2" x="-1083" y="-12" width="1140" height="46" rx="23" fill="#F9F9F9"/>
+<g id="find">
+<rect id="back__COLOR:main-2" x="-29" y="-6" width="80" height="34" rx="17" fill="#FF6838"/>
+<g id="icon__COLOR:invisible">
+<path id="icon" fill-rule="evenodd" clip-rule="evenodd" d="M12.7929 12.2638C11.361 13.6957 9.03939 13.6957 7.60747 12.2638C6.17555 10.8318 6.17555 8.51024 7.60747 7.07832C9.03939 5.6464 11.361 5.6464 12.7929 7.07832C14.2248 8.51024 14.2248 10.8318 12.7929 12.2638ZM13.2333 13.6467C11.2731 15.1461 8.45749 14.9994 6.66466 13.2066C4.71204 11.254 4.71204 8.08813 6.66466 6.13551C8.61728 4.18289 11.7831 4.18289 13.7357 6.13551C15.5285 7.92826 15.6753 10.7437 14.1761 12.7039L17.7428 16.2706L16.8 17.2134L13.2333 13.6467Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1_298">
+<rect width="1280" height="1727" fill="white" transform="translate(-1153 -146)"/>
+</clipPath>
+</defs>
+</svg>
