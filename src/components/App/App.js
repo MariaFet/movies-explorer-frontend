@@ -34,7 +34,7 @@ function App() {
         <Route path="/sign-in" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      {pathname === "/" || pathname === "/movies" || pathname === "/saved-movies" || pathname === "/profile" ? <Footer /> : ''}
+      {pathname === "/" || pathname === "/movies" || pathname === "/saved-movies" ? <Footer /> : ''}
     </div>
   );
 }

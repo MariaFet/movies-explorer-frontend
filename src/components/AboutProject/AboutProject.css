@@ -10,7 +10,6 @@
 .description__wrapper {
   display: flex;
   gap: 40px;
-  flex-wrap: wrap;
 }
 
 .description__title {
@@ -48,6 +47,7 @@
   line-height: normal;
   letter-spacing: -0.8px;
   margin-bottom: 27px;
+  text-align: left;
 }
 
 .description__text {
@@ -57,6 +57,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
+  text-align: left;
 }
 
 .description__text_light {
@@ -113,6 +114,7 @@
 
   .description__wrapper {
     gap: 30px;
+    justify-content: center;
   }
 
   .description__timeline {
@@ -140,11 +142,19 @@
   }
 
   .description__container {
-    margin-bottom: 56px;
+    margin-bottom: 54px;
+    gap: 0;
+  }
+
+  .description__title-container {
+    margin-bottom: 62px;
   }
 
   .description__wrapper {
     gap: 0;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: center;
   }
 
   .description__item-title {
@@ -153,7 +163,7 @@
   }
 
   .description__text {
-    line-height: 16px;
+    line-height: 17px;
     font-size: 11px;
   }
 
@@ -164,6 +174,8 @@
 
   .description__period {
     margin-bottom: 10px;
-    min-height: 35px;
+    height: 35px;
+    padding: 11px 10px;
+    box-sizing: border-box;
   }
 }

@@ -41,6 +41,7 @@
   border: none;
   background-color: white;
   padding: 0;
+  margin-bottom: 60px;
 
 }
 
@@ -51,7 +52,7 @@
 
 @media (max-width: 570px) {
   .error__code {
-    margin-top: calc((100vh - 122px) / 2);
+    margin-top: 329px;
     margin-bottom: 10px;
     line-height: normal;
     font-size: 80px;
@@ -65,12 +66,16 @@
   .error__return-link {
     font-size: 12px;
     margin-bottom: 30px;
-    margin-top: calc((100vh - 167px) / 2 - 25px);
+    margin-top: 284px;
   }
 }
 
 @media (min-width: 571px) and (max-width: 970px) {
   .error__code {
     margin-top: 408px;
+  }
+
+  .error__return-link {
+    margin-bottom: 222px;
   }
 }

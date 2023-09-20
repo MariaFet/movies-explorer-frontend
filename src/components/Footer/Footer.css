@@ -68,8 +68,7 @@
 
 @media (max-width: 570px) {
   .footer {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 61px 10px 20px;
   }
 
   .footer__text {
@@ -101,7 +100,7 @@
   }
 }
 
-@media (max-width: 970px) {
+@media (min-width: 571px) and (max-width: 970px) {
   .footer {
     padding: 79px 30px 20px;
   }

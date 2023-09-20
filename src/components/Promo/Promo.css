@@ -50,13 +50,14 @@
   .promo__background {
     width: 248px;
     height: 248px;
-    margin-top: 142px;
-    margin-bottom: 180px;
+    margin-top: 106px;
+    margin-bottom: 144px;
   }
 
   .promo__title {
     margin: 207px 10px 246px;
     font-size: 31px;
     line-height: 39px;
+    letter-spacing: -1.24px;
   }
 }
