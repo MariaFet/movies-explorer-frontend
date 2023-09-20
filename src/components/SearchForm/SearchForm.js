@@ -13,7 +13,7 @@ function SearchForm(props) {
         </div>
         <div className="search__checkbox-container">
           <input className="search__tumbler" type="checkbox" id="shortMovie"></input>
-          <label for="shortMovie" className="search__tumbler-label">Короткометражки</label>
+          <label htmlFor="shortMovie" className="search__tumbler-label">Короткометражки</label>
         </div>
       </form>
       <hr className="search__line"></hr>

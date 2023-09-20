@@ -87,7 +87,7 @@
   }
 
   .technologies__container {
-    margin-bottom: 60px;
+    margin-bottom: 58px;
   }
 
   .technologies__title {
@@ -99,6 +99,7 @@
     line-height: normal;
     font-size: 30px;
     margin-bottom: 24px;
+    letter-spacing: -1.2px;
   }
 
   .technologies__paragraph {
@@ -111,9 +112,22 @@
     line-height: normal;
     font-size: 12px;
   }
+
+  .technologies__item {
+    width: 84px;
+    height: 57px;
+  }
+
+  .technologies__list { 
+    gap: 6px;
+    justify-content: space-between;
+    padding: 0 53px;
+    box-sizing: border-box;
+
+  }
 }
 
-@media (max-width: 970px) {
+@media (min-width: 571px) and (max-width: 970px) {
   .technologies {
     padding: 90px 50px;
   }

@@ -15,6 +15,11 @@
   margin-left: calc((100% - 396px) / 2);
 }
 
+.register__logo:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .register__logo-link {
   display: flex;
 }
@@ -27,7 +32,9 @@
   font-weight: 500;
   line-height: normal;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
+  align-self: flex-start;
+  margin-left: calc((100% - 396px) / 2);
 }
 
 .register__form {
@@ -55,7 +62,7 @@
   font-weight: 400;
   line-height: normal;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   width: 100%;
   border-radius: 8px;
   background: #F9F9F9;
@@ -79,7 +86,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 69px;
+  margin-bottom: 67px;
   min-height: 12px;
 
 }
@@ -127,6 +134,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-decoration: none;
 }
 
 .register__link:hover {
@@ -156,12 +164,12 @@
 
   .register__welcome {
     margin-top: 50px;
-    margin-bottom: 80px;
+    margin-bottom: 74px;
     align-self: center;
     margin-left: 0;
   }
   
-  .register__logo{
+  .register__logo {
     align-self: center;
     margin-left: 0;
   }

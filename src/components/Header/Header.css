@@ -25,6 +25,11 @@
   margin-bottom: 18px;
 }
 
+.header__logo:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .header__button-container {
   display: flex;
   margin-top: 21px;

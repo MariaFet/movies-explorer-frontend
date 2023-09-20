@@ -7,6 +7,7 @@
   gap: 32px 20px;
   box-sizing: border-box;
   width: 100%;
+  justify-content: center;
 }
 
 .movies-list__show-more {
@@ -31,12 +32,12 @@
 
 @media (max-width: 570px) {
   .movies-list {
-    padding: 40px 10px 80px;
+    padding: 30px 10px 80px;
     gap: 20px;
   }
 }
 
-@media (max-width: 970px) {
+@media (min-width: 571px) and (max-width: 970px) {
   .movies-list {
     padding: 70px 30px 80px;
     gap: 36px 30px;
