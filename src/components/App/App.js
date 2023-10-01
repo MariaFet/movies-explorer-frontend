@@ -228,7 +228,7 @@ function App() {
     .then((res) => {
       setCurrentUser({name: res.data.name, email: res.data.email});
     })
-    .catch(err => console.log(err))
+    //.catch(err => console.log(err))
   }
 
 React.useEffect (() => {

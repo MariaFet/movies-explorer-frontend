@@ -9,15 +9,21 @@ function Profile(props) {
   const [isDisabled, setIsDisabled] = React.useState(false);
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
   const [isSuccessfulMessage, setIsSuccessfulMessage] = React.useState('');
+  const [name, setName] = React.useState(currentUser.name);
+  const [email, setEmail] = React.useState(currentUser.email);
 
+  React.useEffect (() => {
+    setName(currentUser.name);
+    setEmail(currentUser.email);
+  }, [currentUser.name, currentUser.email])
 
   React.useEffect(() => {
-    if (currentUser.name === values.name || currentUser.email === values.email ) {
+    if (currentUser.name === values.name && currentUser.email === values.email ) {
       setIsDisabled(true);
       setIsSuccessfulMessage('Пользователь с таким email уже существует.')
     } else if (values.email === '' || values.name === '') {
       setIsDisabled(true);
-      setIsSuccessfulMessage('Необходимо запонить все поля');
+      setIsSuccessfulMessage('Необходимо заполнить все поля');
     } else if (isValid) {
       setIsSuccessfulMessage('');
     }
@@ -33,7 +39,7 @@ function Profile(props) {
       resetForm();
     })
     .catch(err => {
-      if (err === 409) {
+      if (err.statusCode === 409) {
         setIsSuccessfulMessage('Пользователь с таким email уже существует');
         setIsDisabled(true);
       } else {
@@ -56,14 +62,14 @@ function Profile(props) {
         <div className="profile__form-item">
           <div className="profile__wrapper">
             <label htmlFor="name" className="profile__input-label">Имя</label>
-            <input name="name" id="name" className="profile__input" type="text" placeholder={currentUser.name} required pattern="[а-яА-Яa-zA-ZёЁ\- ]{2,30}" disabled={isInputActive ? false : true} onChange={handleChange} value={values.name || ''}></input>
+            <input name="name" id="name" className="profile__input" type="text" placeholder={name} required pattern="[а-яА-Яa-zA-ZёЁ\- ]{2,30}" disabled={isInputActive ? false : true} onChange={handleChange} value={values.name || ''}></input>
           </div>
           <span className="profile__error">{errors.name}</span>
         </div>
         <div className="profile__form-item">
           <div className="profile__wrapper">
             <label htmlFor="email" className="profile__input-label">E-mail</label>
-            <input name="email" id="email" className="profile__input" type="email" placeholder={currentUser.email} required pattern="^[\w]+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$" disabled={isInputActive ? false : true} onChange={handleChange} value={values.email || ''}></input>
+            <input name="email" id="email" className="profile__input" type="email" placeholder={email} required pattern="^[\w]+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$" disabled={isInputActive ? false : true} onChange={handleChange} value={values.email || ''}></input>
           </div>
           <span className="profile__error">{errors.email}</span>
         </div>
