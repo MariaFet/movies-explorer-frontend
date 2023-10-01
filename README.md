@@ -7,3 +7,5 @@
 Ссылка на Back https://api.movies.bymaria.nomoredomainsicu.ru
 
 IP адрес 51.250.3.180
+
+Ссылка на pull request https://github.com/MariaFet/movies-explorer-frontend/pull/3
