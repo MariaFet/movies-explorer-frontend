@@ -231,6 +231,14 @@ function App() {
     .catch(err => console.log(err))
   }
 
+React.useEffect (() => {
+  if (isLoggedIn && pathname === '/sign-in') {
+    return navigate('/');
+  } else if (isLoggedIn && pathname === '/sign-up') {
+    return navigate('/');
+  }
+}, [isLoggedIn, navigate, pathname])
+
   return (
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
