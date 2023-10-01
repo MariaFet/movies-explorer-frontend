@@ -8,7 +8,7 @@ function MoviesCardList (props) {
 
 
   function handleDisplayedMovies () {
-    if (window.innderWidth > 1279) {
+    if (window.innerWidth > 1279) {
       setDisplayedMovies(16);
     } else if (window.innerWidth > 989) {
       setDisplayedMovies(9);
