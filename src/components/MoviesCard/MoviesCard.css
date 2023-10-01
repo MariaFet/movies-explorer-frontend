@@ -14,6 +14,8 @@
   object-fit: cover;
   background-repeat: no-repeat;
   /*fill: lightgray 50% cover no-repeat;*/
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .card__info {
@@ -31,7 +33,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  width: 206px;
+  width: 239px;
   text-align: left;
 }
 

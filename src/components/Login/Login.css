@@ -90,7 +90,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-top: 167px;
+  margin-top: calc(167px - 12px);
   border: none;
   min-height: 45px;
 }
@@ -98,6 +98,11 @@
 .login__submit-button:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.login__submit-button:disabled {
+  background: #F8F8F8;
+  color: #C2C2C2;
 }
 
 .login__register-redirect {
@@ -127,6 +132,18 @@
 .login__link:hover {
   cursor: pointer;
   opacity: 0.7;
+}
+
+.login__error {
+  margin: 0;
+  color: #EE3465;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  min-height: 12px;
+
 }
 
 @media (max-width: 970px) {

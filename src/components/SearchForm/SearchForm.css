@@ -13,7 +13,7 @@
   color: #A0A0A0;
   align-items: center;
   min-height: 46px;
-  margin-bottom: 41px;
+  margin-bottom: 12px;
 }
 
 .search__input {
@@ -92,6 +92,25 @@
   flex-wrap: wrap;
 }
 
+.search__error {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px; /* 130.769% */
+  margin: 0;
+  text-align: center;
+  color: red;
+  min-height: 17px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.search__error_hidden {
+  visibility: hidden;
+  line-height: 17px;
+  
+}
 
 .search__line {
   width: 100%;

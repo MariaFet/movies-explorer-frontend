@@ -8,6 +8,7 @@
   box-sizing: border-box;
   width: 100%;
   justify-content: center;
+  min-height: 616px;
 }
 
 .movies-list__show-more {
@@ -28,6 +29,10 @@
 .movies-list__show-more:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.movies-list__show-more_hidden {
+  visibility: hidden;
 }
 
 @media (max-width: 570px) {
