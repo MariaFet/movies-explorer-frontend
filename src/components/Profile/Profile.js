@@ -38,12 +38,14 @@ function Profile(props) {
       setIsInputActive(false);
       resetForm();
     })
-    .catch(err => {
+    .catch((err) => {
       if (err.statusCode === 409) {
         setIsSuccessfulMessage('Пользователь с таким email уже существует');
         setIsDisabled(true);
+        return
       } else {
-      setIsSuccessfulMessage('При обновлении профиля произошла ошибка.');
+        setIsSuccessfulMessage('При обновлении профиля произошла ошибка.');
+        setIsDisabled(true);
       }
       console.log(err);
     })

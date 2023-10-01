@@ -226,7 +226,7 @@ function App() {
   function handleUpdateUser (data) {
     return mainApi.editUserInfo(data)
     .then((res) => {
-      setCurrentUser({name: res.data.name, email: res.data.email});
+      setCurrentUser({name: res.user.name, email: res.user.email});
     })
     //.catch(err => console.log(err))
   }
