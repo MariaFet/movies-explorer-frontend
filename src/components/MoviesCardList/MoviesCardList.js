@@ -8,19 +8,30 @@ function MoviesCardList (props) {
 
 
   function handleDisplayedMovies () {
-    if (window.innerWidth >= 1280) {
+    if (window.innderWidth > 1279) {
+      setDisplayedMovies(16);
+    } else if (window.innerWidth > 989) {
+      setDisplayedMovies(9);
+    } else if (window.innerWidth > 767) {
+      setDisplayedMovies(8);
+    } else {
+      setDisplayedMovies(5);
+    }
+    /*if (window.innerWidth >= 1280) {
       setDisplayedMovies(16);
     } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
       setDisplayedMovies(8);
     } else {
       setDisplayedMovies(5);
-    }
+    }*/
   }
 
   function handleMoreDisplayedMovies () {
-      if (window.innerWidth >= 1280) {
+      if (window.innerWidth > 1279) {
       setDisplayedMovies(displayedMovies + 4);
-    } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+    } else if (window.innerWidth > 989) {
+      setDisplayedMovies(displayedMovies + 3)
+    } else if (window.innerWidth > 767) {
       setDisplayedMovies(displayedMovies + 2);
     } else {
       setDisplayedMovies(displayedMovies + 2);
