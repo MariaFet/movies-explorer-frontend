@@ -1,11 +1,22 @@
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 import React from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
 
 function MoviesCardList (props) {
   const [displayedMovies, setDisplayedMovies] = React.useState(0);
-  const moviesList = props.movies.slice(0, displayedMovies);
+  let moviesList = props.movies.slice(0, displayedMovies);
 
+  const {pathname} = useLocation();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (pathname === '/saved-movies') {
+      moviesList = props.savedMovies.slice(0, displayedMovies);
+    } else {
+      moviesList = props.filteredMovies.slice(0, displayedMovies);
+    }
+  }, [navigate])
 
   function handleDisplayedMovies () {
     if (window.innerWidth > 1279) {
@@ -17,13 +28,6 @@ function MoviesCardList (props) {
     } else {
       setDisplayedMovies(5);
     }
-    /*if (window.innerWidth >= 1280) {
-      setDisplayedMovies(16);
-    } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
-      setDisplayedMovies(8);
-    } else {
-      setDisplayedMovies(5);
-    }*/
   }
 
   function handleMoreDisplayedMovies () {

@@ -64,7 +64,7 @@ export class MainApi {
 
 const mainApi = new MainApi({
   baseUrl: 'https://api.movies.bymaria.nomoredomainsicu.ru',
-  // baseUrl: 'http://localhost:3000',
+  //baseUrl: 'http://localhost:3000',
   headers: {
     'Content-Type': 'application/json',
   }

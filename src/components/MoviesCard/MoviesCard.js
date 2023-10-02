@@ -25,9 +25,11 @@ function MoviesCard (props) {
     console.log(props.savedMovies);
   }
   
-  const [isSaved, setIsSaved] = React.useState(props.savedMovies.find((savedMovie) => {return savedMovie.movieId === props.movie.id}))
+  const [isSaved, setIsSaved] = React.useState(props.savedMovies.some((savedMovie) => {return savedMovie.movieId === props.movie.id}))
   
-
+React.useEffect(() => {
+  setIsSaved(props.savedMovies.some((savedMovie) => savedMovie.movieId === props.movie.id));
+}, [props.savedMovies, props.movie.id])
   return (
     <div className="card">
       <Link to={props.movie.trailerLink} target="_blank">

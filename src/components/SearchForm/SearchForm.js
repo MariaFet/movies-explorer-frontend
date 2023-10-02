@@ -3,13 +3,16 @@ import searchIcon from '../../images/searchIcon.svg';
 import React from 'react';
 
 function SearchForm(props) {
-  const [values, setValues] = React.useState({search: '', shortMovie: false});
+  const [values, setValues] = React.useState(props.defaultValues || {search: '', shortMovie: false});
   const [error, setError] = React.useState('');
   
   function handleShortMovieChange (e) {
+    console.log(values);
     setValues({...values, shortMovie: !values.shortMovie});
+    console.log(values);
     props.onFilter(values);
   }
+
 
   function handleSearchMovieChange (e) {
     setError('');
@@ -34,10 +37,6 @@ function SearchForm(props) {
     }
     searchMovie(values);
   }
-
-  React.useEffect(() => {
-    localStorage.setItem('search-query', JSON.stringify(values));
-  }, [values])
   
   return (
     <section className="search">
@@ -50,7 +49,7 @@ function SearchForm(props) {
         </div>
         <span className="search__error">{error}</span>
         <div className="search__checkbox-container">
-          <input className="search__tumbler" type="checkbox" id="shortMovie" name="shortMovie" onChange={handleShortMovieChange} checked={values.shortMovie}></input>
+          <input className="search__tumbler" type="checkbox" id="shortMovie" name="shortMovie" onClick={handleShortMovieChange} /*onChange={handleShortMovieChange}*/ defaultChecked={values.shortMovie}></input>
           <label htmlFor="shortMovie" className="search__tumbler-label">Короткометражки</label>
         </div>
       </form>

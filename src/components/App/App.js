@@ -81,6 +81,7 @@ function App() {
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = React.useState(false);
   const [isSuccessInfoToolTipStatus, setIsSuccessInfoToolTipStatus] = React.useState(false);
   const [infoText, setInfoText] = React.useState('');
+  const [foundMovies, setFoundMovies] = React.useState(JSON.parse(localStorage.getItem('filteredMovies')));
 
   function searchMoviesUpdate (values) {
     const movies = JSON.parse(localStorage.getItem('movies'));
@@ -94,18 +95,21 @@ function App() {
       setIsSuccessInfoToolTipStatus(false);
     }
       setMovies(filteredMovies);
+      setFoundMovies(filteredMovies);
   }
 
   function filterMovie (values) {
     const movies = JSON.parse(localStorage.getItem('movies'));
     let filteredMovies = searchMoviesByKeyWord(movies, JSON.parse(localStorage.getItem('search-query')).search);
     const newMovies = JSON.parse(localStorage.getItem('search-query')).shortMovie ? filteredMovies : filterMoviesByDuration(filteredMovies);
+    localStorage.setItem('filteredMovies', JSON.stringify(newMovies));
     if (newMovies.length === 0) {
       setInfoText('Ничего не найдено');
       setIsInfoToolTipOpen(true);
       setIsSuccessInfoToolTipStatus(false);
     }
       setMovies(newMovies);
+      setFoundMovies(newMovies);
   }
 
   function searchMovie(values) {
@@ -117,31 +121,6 @@ function App() {
     })
     //.catch(err => console.log(err))
     .finally(() => setIsLoading(false))
-  }
-
-  function searchInSavedMovies (values) {
-    const currentMovies = JSON.parse(localStorage.getItem('saved-movies'));
-    let filteredSavedMovies = searchMoviesByKeyWord(currentMovies, JSON.parse(localStorage.getItem('search-query')).search);
-    //localStorage.setItem('filteredSavedMovies', JSON.stringify(filteredSavedMovies));
-    if (filteredSavedMovies.length === 0) {
-      setInfoText('Ничего не найдено');
-      setIsInfoToolTipOpen(true);
-      setIsSuccessInfoToolTipStatus(false);
-    }
-      setSavedMovies(filteredSavedMovies);
-  }
-
-  function filterSavedMovies (values) {
-    const movies = JSON.parse(localStorage.getItem('saved-movies'));
-    let filteredMovies = searchMoviesByKeyWord(movies, JSON.parse(localStorage.getItem('search-query')).search);
-    const newMovies = JSON.parse(localStorage.getItem('search-query')).shortMovie ? filteredMovies : filterMoviesByDuration(filteredMovies);
-    if (newMovies.length === 0) {
-      setInfoText('Ничего не найдено');
-      setIsInfoToolTipOpen(true);
-      setIsSuccessInfoToolTipStatus(false);
-      //setSavedMovies(movies);
-    }
-      setSavedMovies(newMovies);
   }
 
   function toggleAddMovie (movie) {
@@ -177,9 +156,9 @@ function App() {
     }
   }
 
-  /*React.useEffect(() => {
+  React.useEffect(() => {
     localStorage.setItem('saved-movies', JSON.stringify(savedMovies));
-  }, [toggleAddMovie, deleteMovie]);*/
+  }, [savedMovies])
   
   React.useEffect(() => {
     if (isLoggedIn) {
@@ -246,8 +225,8 @@ React.useEffect (() => {
         {pathname === "/movies" || pathname === "/saved-movies" || pathname === "/profile" ? <Header isMain={false} isLoggedIn={isLoggedIn} /> : ''}
         <Routes>
           <Route exact path="/" element={<Main />} />
-          <Route path="/movies" element={<ProtectedRouteElement element={Movies} movies={movies} onSearch={searchMovie} onFilter={filterMovie} toggleAddMovie={toggleAddMovie} deleteMovie={deleteMovie} isLoading={isLoading} isLoggedIn={isLoggedIn} savedMovies={savedMovies} />} />
-          <Route path="/saved-movies" element={<ProtectedRouteElement element={SavedMovies} movies={savedMovies} onSearch={searchInSavedMovies} onFilter={filterSavedMovies} deleteMovie={deleteMovie} isLoading={isLoading} isLoggedIn={isLoggedIn} savedMovies={savedMovies} />} />
+          <Route path="/movies" element={<ProtectedRouteElement element={Movies} foundMovies={foundMovies} movies={foundMovies} onSearch={searchMovie} onFilter={filterMovie} toggleAddMovie={toggleAddMovie} deleteMovie={deleteMovie} isLoading={isLoading} isLoggedIn={isLoggedIn} savedMovies={savedMovies} />} />
+          <Route path="/saved-movies" element={<ProtectedRouteElement element={SavedMovies} movies={savedMovies} deleteMovie={deleteMovie} isLoading={isLoading} isLoggedIn={isLoggedIn} savedMovies={savedMovies} />} />
           <Route path="/profile" element={<ProtectedRouteElement element={Profile} onSignOut={handleSignOut} onSubmit={handleUpdateUser} isLoggedIn={isLoggedIn} />} />
           <Route path="/sign-up" element={<Register onSubmit={handleSignUp} />} />
           <Route path="/sign-in" element={<Login onSubmit={handleSignIn} />} />
