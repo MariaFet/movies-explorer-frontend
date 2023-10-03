@@ -225,7 +225,7 @@ React.useEffect (() => {
         {pathname === "/movies" || pathname === "/saved-movies" || pathname === "/profile" ? <Header isMain={false} isLoggedIn={isLoggedIn} /> : ''}
         <Routes>
           <Route exact path="/" element={<Main />} />
-          <Route path="/movies" element={<ProtectedRouteElement element={Movies} foundMovies={foundMovies} movies={foundMovies} onSearch={searchMovie} onFilter={filterMovie} toggleAddMovie={toggleAddMovie} deleteMovie={deleteMovie} isLoading={isLoading} isLoggedIn={isLoggedIn} savedMovies={savedMovies} />} />
+          <Route path="/movies" element={<ProtectedRouteElement element={Movies} foundMovies={foundMovies || []} movies={foundMovies || movies} onSearch={searchMovie} onFilter={filterMovie} toggleAddMovie={toggleAddMovie} deleteMovie={deleteMovie} isLoading={isLoading} isLoggedIn={isLoggedIn} savedMovies={savedMovies} />} />
           <Route path="/saved-movies" element={<ProtectedRouteElement element={SavedMovies} movies={savedMovies} deleteMovie={deleteMovie} isLoading={isLoading} isLoggedIn={isLoggedIn} savedMovies={savedMovies} />} />
           <Route path="/profile" element={<ProtectedRouteElement element={Profile} onSignOut={handleSignOut} onSubmit={handleUpdateUser} isLoggedIn={isLoggedIn} />} />
           <Route path="/sign-up" element={<Register onSubmit={handleSignUp} />} />

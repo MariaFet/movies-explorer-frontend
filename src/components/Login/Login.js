@@ -13,7 +13,7 @@ function Login(props) {
     return props.onSubmit({email: values.email, password: values.password})
     .then((res) => {
       resetForm();
-      setIsSuccessfulMessage(res.message);
+    //setIsSuccessfulMessage('Авторизация прошла успешно');
     })
     .catch((err) => {
       if (err === 401) {
