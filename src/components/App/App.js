@@ -76,6 +76,7 @@ function App() {
     });
     setMovies([]);
     setSavedMovies([]);
+    setFoundMovies([]);
   }
 
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = React.useState(false);
@@ -99,17 +100,31 @@ function App() {
   }
 
   function filterMovie (values) {
-    const movies = JSON.parse(localStorage.getItem('movies'));
-    let filteredMovies = searchMoviesByKeyWord(movies, JSON.parse(localStorage.getItem('search-query')).search);
-    const newMovies = JSON.parse(localStorage.getItem('search-query')).shortMovie ? filteredMovies : filterMoviesByDuration(filteredMovies);
-    localStorage.setItem('filteredMovies', JSON.stringify(newMovies));
-    if (newMovies.length === 0) {
-      setInfoText('Ничего не найдено');
-      setIsInfoToolTipOpen(true);
-      setIsSuccessInfoToolTipStatus(false);
+    if (!JSON.parse(localStorage.getItem('movies'))) {
+      moviesApi.getMovies()
+      .then((res) => {
+        localStorage.setItem('movies', JSON.stringify(res));
+        const movies = JSON.parse(localStorage.getItem('movies'));
+        let filteredMovies = localStorage.getItem('search-query').search ? searchMoviesByKeyWord(movies, JSON.parse(localStorage.getItem('search-query')).search) : movies;
+        const newMovies = JSON.parse(localStorage.getItem('search-query')).shortMovie ? filteredMovies : filterMoviesByDuration(filteredMovies);
+        localStorage.setItem('filteredMovies', JSON.stringify(newMovies));
+        setMovies(newMovies);
+        setFoundMovies(newMovies);
+      })
+      .catch(err => console.log(err))
+    } else {
+      const movies = JSON.parse(localStorage.getItem('movies'));
+      let filteredMovies = localStorage.getItem('search-query').search ? searchMoviesByKeyWord(movies, JSON.parse(localStorage.getItem('search-query')).search) : movies;
+      const newMovies = JSON.parse(localStorage.getItem('search-query')).shortMovie ? filteredMovies : filterMoviesByDuration(filteredMovies);
+      localStorage.setItem('filteredMovies', JSON.stringify(newMovies));
+      if (newMovies.length === 0) {
+        setInfoText('Ничего не найдено');
+        setIsInfoToolTipOpen(true);
+        setIsSuccessInfoToolTipStatus(false);
+      }
+        setMovies(newMovies);
+        setFoundMovies(newMovies);
     }
-      setMovies(newMovies);
-      setFoundMovies(newMovies);
   }
 
   function searchMovie(values) {

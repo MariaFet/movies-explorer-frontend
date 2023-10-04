@@ -12,14 +12,14 @@ function Movies (props) {
     //localStorage.setItem('search-query', JSON.stringify(values));
   }
   function filterMovies (values) {
-    const newValues = { ...values, shortMovie: values.shortMovie};
+    const newValues = { ...values, shortMovie: !values.shortMovie};
     setValues(newValues);
     props.onFilter(newValues);
     //localStorage.setItem('search-query', JSON.stringify(newValues));
   }
 
   React.useEffect(() => {
-    localStorage.setItem('search-query', JSON.stringify({search: values.search, shortMovie: !values.shortMovie}));
+    localStorage.setItem('search-query', JSON.stringify({search: values.search, shortMovie: values.shortMovie}));
   }, [values])
 
 

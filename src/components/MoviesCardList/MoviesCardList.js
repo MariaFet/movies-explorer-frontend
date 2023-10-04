@@ -2,6 +2,7 @@ import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 import React from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
+import debounce from 'lodash/debounce';
 
 function MoviesCardList (props) {
   const [displayedMovies, setDisplayedMovies] = React.useState(0);
@@ -9,6 +10,17 @@ function MoviesCardList (props) {
 
   const {pathname} = useLocation();
   const navigate = useNavigate();
+  
+  const handleResize = debounce (() => {
+    handleDisplayedMovies();
+  }, 100)
+
+  React.useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [handleResize])
 
   React.useEffect(() => {
     if (pathname === '/saved-movies') {

@@ -7,9 +7,7 @@ function SearchForm(props) {
   const [error, setError] = React.useState('');
   
   function handleShortMovieChange (e) {
-    console.log(values);
     setValues({...values, shortMovie: !values.shortMovie});
-    console.log(values);
     props.onFilter(values);
   }
 
@@ -49,7 +47,7 @@ function SearchForm(props) {
         </div>
         <span className="search__error">{error}</span>
         <div className="search__checkbox-container">
-          <input className="search__tumbler" type="checkbox" id="shortMovie" name="shortMovie" onClick={handleShortMovieChange} /*onChange={handleShortMovieChange}*/ defaultChecked={values.shortMovie}></input>
+          <input className="search__tumbler" type="checkbox" id="shortMovie" name="shortMovie" /*onClick={handleShortMovieChange}*/ onChange={handleShortMovieChange} value={values.shortMovie} checked={values.shortMovie} ></input>
           <label htmlFor="shortMovie" className="search__tumbler-label">Короткометражки</label>
         </div>
       </form>
